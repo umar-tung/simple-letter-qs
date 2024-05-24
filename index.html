@@ -24,7 +24,7 @@
   </script>
   <body>
     <h1>Questions</h1>
-    <div id="items-display"></div>
+    <div id="questions-display"></div>
   </body>
   <script type="text/javascript">
     // this will fetch the current URL and show it
@@ -174,15 +174,15 @@
 
     let indexes = relativeUrl.split('-').map(Number);
 
-    let displayDiv = document.getElementById('items-display');
+    let displayDiv = document.getElementById('questions-display');
     indexes.forEach(function(item_index, ind) {
-      let item = items[item_index]
+      let question = questions[item_index]
 
-      if (item) {
-        let itemDiv = document.createElement('div');
-        itemDiv.className = 'item'
-        itemDiv.textContent = `${ind+1}: ${item}`
-        displayDiv.appendChild(itemDiv)
+      if (question) {
+        let questionDiv = document.createElement('div');
+        itemDiv.className = 'question'
+        itemDiv.textContent = `${ind+1}: ${question}`
+        displayDiv.appendChild(questionDiv)
       }
 
     });
