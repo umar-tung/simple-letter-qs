@@ -22,8 +22,50 @@
       }
     }(window.location))
   </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .generate-button {
+      color: white;
+      background-color: #007BFF;
+      border: 2px solid #007BFF;
+      border-radius: 8px;
+      font-size: medium;
+      width: auto;
+      height: 2.5rem;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .generate-button:hover {
+      background-color: white;
+      color: #007BFF;
+      border: 2px solid #007BFF;
+    }
+
+    .header-section {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    h1 {
+      padding: 1rem;
+    }
+
+    .center {
+      align-content: center;
+    }
+
+  </style>
   <body>
-    <h1>Questions</h1>
+    <div class='header-section'>
+      <h1>Letter Questions</h1>
+      <div class='center'>
+      <button id="redirect-button" class='generate-button'>Generate New Questions</button>
+      </div>
+    </div>
     <div id="questions-display"></div>
   </body>
   <script type="text/javascript">
@@ -184,6 +226,15 @@
         questionDiv.textContent = `${ind+1}: ${question}`
         displayDiv.appendChild(questionDiv)
       }
+
+    });
+
+    document.getElementById('redirect-button').addEventListener('click', function() {
+
+      const randomNumbers = Array.from({length: 12}, () => Math.floor(Math.random() * 123));
+      const randomString = randomNumbers.join('-');
+
+      window.location.href = baseUrl + randomString
 
     });
   </script>
