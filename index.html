@@ -58,6 +58,11 @@
       align-content: center;
     }
 
+    .question {
+      padding: 0.25rem 1rem;
+      font-size: medium;
+    }
+
   </style>
   <body>
     <div class='header-section'>
@@ -231,7 +236,14 @@
 
     document.getElementById('redirect-button').addEventListener('click', function() {
 
-      const randomNumbers = Array.from({length: 12}, () => Math.floor(Math.random() * 123));
+      const randomNumbers = [];
+      while (randomNumbers.length < 12) {
+        const randomNum = Math.floor(Math.random() * 123);
+        if (!randomNumbers.includes(randomNum)) {
+          randomNumbers.push(randomNum);
+        }
+      }
+
       const randomString = randomNumbers.join('-');
 
       window.location.href = baseUrl + randomString
