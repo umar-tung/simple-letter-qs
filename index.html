@@ -22,15 +22,13 @@
       }
     }(window.location))
   </script>
-  <script type="text/javascript">
-    let currentUrl = window.location.href;
-
-    let header = document.getElementById('url-header');
-
-    header.textContent = currentUrl;
-  </script>
   <body>
     <h1 id="url-header"></h1>
     <p>My first paragraph.</p>
   </body>
+  <script type="text/javascript">
+    let currentUrl = window.location.href;
+    let header = document.getElementById("url-header");
+    header.textContent = currentUrl;
+  </script>
 </html>
